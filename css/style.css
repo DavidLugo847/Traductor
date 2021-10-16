@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#cont {
+    box-shadow: -1px 1px 3px 1px darkgray;
+    justify-content: center;
+    width: 70%;
+    margin-top: 5em;
+    padding: 20px;
+}
+
+.main p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.rightlabel,
+.totaliva {
+    text-align: end;
+}
+
+.totaliva p {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#vtotal_iva {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.add-cart,
+.del-prod {
+    float: right;
+}
+
+.add-cart p,
+.del-prod p {
+    padding: 0;
+    margin: 0;
+}
+
+.del-prod {
+    border: rgb(109, 23, 23) !important;
+    background: rgb(172, 36, 36) !important;
+}
+
+#voz,
+#trad {
+    float: right;
+}
+
+#resultado,
+#palabra {
+    height: 100px;
+}
+
+#aviso {
+    line-height: 40px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+}
+
+label {
+    margin-left: 10px;
+}
