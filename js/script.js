@@ -1,3 +1,5 @@
+//Este script es para no usar base de datos
+
 let botonElement = document.getElementById("trad");
 let pElement = document.getElementById("resultado");
 let contador = 1;
@@ -10,101 +12,62 @@ let traducir = "";
 document.getElementById('cambio').innerHTML = '<p id="aviso">Español   >   Inglés</p>';
 traducir = function() {
     let palabra = document.getElementById('palabra').value;
-    let significadosIngles = ['Apple', 'Mouse', 'Car'];
-    let significadosSpain = ['Manzana', 'MANZANA', 'manzana', 'Ratón', 'RATÓN', 'ratón', 'raton', 'RATON', 'Raton', 'carro', 'CARRO', 'Carro'];
+    let significadosIngles = ['Advertising', 'Skim', 'Found Out', 'Choose', 'Below', 'Whitout', 'Useful', 'Otherwise', 'However', 'Junk', 'Trash', 'Waste', 'Bother', 'Nowadays', 'Agree', 'Bored', 'Become', 'Argue', 'Seens', 'Believe', 'Begin', 'Make Sure', 'Polite', 'Unknown', 'Brother', 'Stone', 'Carrot', 'Cotton', 'Angry', 'Cap', 'Wild', 'Lazy', 'Way', 'Ghost', 'Missunderstand', 'Word', 'World', 'Worm', 'Work', 'Sword', 'Goose', 'Niece', 'Lung', 'Liver', 'Long', 'Link', 'Ink', 'Blade', 'Sharp', 'Aberration', 'Aversion', 'Hypocrisy', 'Surmise', 'Preclude', 'Usurp', 'Clamor', 'Accolade', 'Exemplary', 'Iconoclast', 'Disparage', 'Rectify', 'Frivolous', 'Caustic', 'Insurgent', 'Heretic', 'Whimsical', 'Descadence', 'Copious', 'Tirade', 'Affinity', 'Bravity', 'Aesthetic', 'Archaic', 'Floor', 'Fast', 'Fairly', 'Glass', 'Gorgeous', 'Glasses', 'Harmful', 'Open', 'Side', 'Sea', 'Song', 'Smoking', 'Skim', 'Issues', 'Letter', 'Signal', 'Lock', 'Lord', 'Address', 'Countries', 'Drive', 'Avoid', 'Faucets', 'Guest', 'Guess', 'Stool', 'Tool', 'Peek', 'Whale', 'While', 'Whole, Everythink, Although', 'Owner', 'Affairs', 'Issues', 'Advice', 'Available', 'Both', 'Booth', 'Goal', 'Lodges', 'Wind', 'Wig', 'Stream', 'Heard', 'Environment', 'Find out', 'Free', 'Follow', 'Forgotten', 'Fields', 'Get Along', 'Get back to', 'Give up', 'Glad', 'Get off', 'Hope', 'Hurry up', 'It should be done', 'It self', 'Spread Out', 'Suitable', 'Cute', 'Above', 'Yet', 'Might', 'Hate', 'Stew', 'Hardworking', 'Treat', 'Scratch', 'Rubbed', 'Thick', 'Spoon', 'Neightboors', 'Even Though', 'Make Up', 'Reinforce', 'Greedily', 'Shabbily', 'Dive', 'Rough', 'Drop', 'Injured', 'Quietly', 'Aplaze', 'Anymore', 'Alive', 'Allow', 'Bite', 'Biscuit', 'Break', 'Boss', 'Bubbles', 'Brought', 'Bridge', 'Back up', 'Bring up', 'Blocks', 'Believe', 'Come', 'Crowds', 'Carry out', 'Come across', 'Come up', 'Compasion', 'Doom', 'Dizzy', 'Duty', 'Drop', 'Tire', 'Toward', 'Travel', 'Tip', 'Wall', 'Knocked', 'Kinds of', 'Look alfter', 'Lawyer', 'Leave', 'Upted', 'Lost', 'Lower', 'Make Up', 'Must', 'Moods', 'Mind', 'Napkin'];
+    let significadosSpain = ['Publicidad', 'Scanear', 'Descubrir', 'Escojer', 'Debajo', 'Sin que', 'Util', 'De lo contrario', 'Sin embargo', 'Chatarra', 'Basura', 'Desperdicio', 'Molestar', 'Hoy en dia', 'Estar de Acuerdo', 'Aburrido', 'Volverse', 'Discutir', 'Parecer', 'Creer', 'Comenzar', 'Asegurar', 'Cortes', 'Desconocido', 'Hermano', 'Piedra', 'Zanahoria', 'Algodon', 'Enojado', 'Gorra', 'Salvaje', 'Pereza', 'Camino', 'Fantasma', 'Mal entendido', 'Palabra', 'Mundo', 'Gusano', 'Trabajo', 'Espada', 'Ganzo', 'Sobrina', 'Pulmon', 'Higado', 'Largo', 'Enlace', 'Tinta', 'Cuchilla', 'Agudo', 'Aberracion', 'Aversion', 'Hipocresia', 'Conjetura', 'Imposibilitar', 'Usurpar', 'Clamor', 'Espaldaraso', 'Ejemplar', 'Iconoclasta', 'Menospreciar', 'Rectificar', 'Frivolo', 'caustico', 'Insurgente', 'Hereje', 'Caprichoso', 'Decadencia', 'Copioso', 'Diatriba', 'Afinidad', 'Valentia', 'Estetico', 'Arcaico', 'Piso', 'Rapido', 'Lejos', 'Vidrio', 'Hermoso', 'Gafas', 'Dañinos', 'Abierto', 'Lado', 'Mar', 'Cantar', 'Fumar', 'Desnatar', 'Cuestiones', 'Carta', 'Señal', 'Cerrar con llave', 'Señor', 'Direccion', 'Paises', 'Conducir', 'Evitar', 'Grifos', 'Invitado', 'Supongo', 'Taborete', 'Herramienta', 'Vistazo', 'Ballena', 'Mientras', 'Todo', 'Propietario', 'Asuntos', 'Problemas', 'Concejo', 'Disponible', 'Ambos', 'Stand', 'Meta', 'Casas de Campo', 'Viento', 'Peluca', 'Corriente', 'Oido', 'Medio Ambiente', 'Averiguar', 'Libre', 'Seguir', 'Olvidado', 'Campos', 'Llevarse bien', 'Responder mas tarde', 'Dejar un habito', 'Contento', 'Bajarse', 'Paz', 'Darse prisa', 'Deberia estar hecho', 'Si mismo', 'Extendido', 'Adecuado', 'Lindo', 'Encima', 'Todavia', 'Podria', 'Odio', 'Estofado', 'Trabajadora', 'Tratar', 'Rasguño', 'Frotado', 'Grueso', 'Cuchara', 'Vecinos', 'Aunque', 'Compensar', 'Reforzar', 'Con avidez', 'Gastado', 'Buceo', 'Aspero', 'Soltar', 'Heridos', 'En silencio', 'Disculpa', 'Nunca mas', 'Vivo', 'Permitir', 'Mordedura', 'Galletas', 'Romper', 'Jefe', 'Burbujas', 'Trajo', 'Puente', 'Apoyar', 'Mencionar algo', 'Bloques', 'Creer', 'Venir', 'Multitudes', 'Llevar a cabo', 'Encontrarse alguien', 'Proponer', 'Compasion', 'Condenar', 'Mareado', 'Obligacion', 'Dejar a alguien', 'Neumatico', 'Hacia', 'Viaje', 'Propina', 'Pared', 'Golpe', 'Tipos', 'Cuidar', 'Abogado', 'Salir', 'Levantado', 'Perdido', 'Inferior', 'Recuperar', 'Debe', 'Estados de Animo', 'Mente', 'Servilleta'];
 
-    if (palabra == significadosSpain[0] || palabra == significadosSpain[1] || palabra == significadosSpain[2]) {
 
-        document.getElementById('resultado').value = significadosIngles[0];
-    } else {
-        if (palabra == significadosSpain[3] || palabra == significadosSpain[4] || palabra == significadosSpain[5] || palabra == significadosSpain[6] || palabra == significadosSpain[7] || palabra == significadosSpain[8]) {
+    for (var i = 0; i <= significadosSpain.length; i++) {
 
-            document.getElementById('resultado').value = significadosIngles[1];
+        if (String(palabra.toLowerCase()) === String(significadosSpain[i].toLowerCase())) {
+            return document.getElementById('resultado').value = significadosIngles[i];
         } else {
-            if (palabra == significadosSpain[9] || palabra == significadosSpain[10] || palabra == significadosSpain[11]) {
-
-                document.getElementById('resultado').value = significadosIngles[2];
-            } else {
-                document.getElementById('resultado').value = 'Lo siento, no se encuentra la palabra';
-            }
+            document.getElementById('resultado').value = 'Sin resultados...';
         }
     }
 }
 
-
-
-
-botonElement.onclick = function() {
+botonElement.onmousedown = function() {
     contador++;
     pElement.textContent = contador;
     op = contador % 2 == 0;
+    console.log(op);
     switch (op) {
         case op === 0:
             document.getElementById('cambio').innerHTML = '<p id="aviso">Español   >   Inglés </p>';
             traducir = function() {
                 let palabra = document.getElementById('palabra').value;
-                let significadosIngles = ['Apple', 'Mouse', 'Car'];
-                let significadosSpain = ['Manzana', 'MANZANA', 'manzana', 'Ratón', 'RATÓN', 'ratón', 'raton', 'RATON', 'Raton', 'carro', 'CARRO', 'Carro'];
-                alert = "Ingles";
+                let significadosIngles = ['Advertising', 'Skim', 'Found Out', 'Choose', 'Below', 'Whitout', 'Useful', 'Otherwise', 'However', 'Junk', 'Trash', 'Waste', 'Bother', 'Nowadays', 'Agree', 'Bored', 'Become', 'Argue', 'Seens', 'Believe', 'Begin', 'Make Sure', 'Polite', 'Unknown', 'Brother', 'Stone', 'Carrot', 'Cotton', 'Angry', 'Cap', 'Wild', 'Lazy', 'Way', 'Ghost', 'Missunderstand', 'Word', 'World', 'Worm', 'Work', 'Sword', 'Goose', 'Niece', 'Lung', 'Liver', 'Long', 'Link', 'Ink', 'Blade', 'Sharp', 'Aberration', 'Aversion', 'Hypocrisy', 'Surmise', 'Preclude', 'Usurp', 'Clamor', 'Accolade', 'Exemplary', 'Iconoclast', 'Disparage', 'Rectify', 'Frivolous', 'Caustic', 'Insurgent', 'Heretic', 'Whimsical', 'Descadence', 'Copious', 'Tirade', 'Affinity', 'Bravity', 'Aesthetic', 'Archaic', 'Floor', 'Fast', 'Fairly', 'Glass', 'Gorgeous', 'Glasses', 'Harmful', 'Open', 'Side', 'Sea', 'Song', 'Smoking', 'Skim', 'Issues', 'Letter', 'Signal', 'Lock', 'Lord', 'Address', 'Countries', 'Drive', 'Avoid', 'Faucets', 'Guest', 'Guess', 'Stool', 'Tool', 'Peek', 'Whale', 'While', 'Whole, Everythink, Although', 'Owner', 'Affairs', 'Issues', 'Advice', 'Available', 'Both', 'Booth', 'Goal', 'Lodges', 'Wind', 'Wig', 'Stream', 'Heard', 'Environment', 'Find out', 'Free', 'Follow', 'Forgotten', 'Fields', 'Get Along', 'Get back to', 'Give up', 'Glad', 'Get off', 'Hope', 'Hurry up', 'It should be done', 'It self', 'Spread Out', 'Suitable', 'Cute', 'Above', 'Yet', 'Might', 'Hate', 'Stew', 'Hardworking', 'Treat', 'Scratch', 'Rubbed', 'Thick', 'Spoon', 'Neightboors', 'Even Though', 'Make Up', 'Reinforce', 'Greedily', 'Shabbily', 'Dive', 'Rough', 'Drop', 'Injured', 'Quietly', 'Aplaze', 'Anymore', 'Alive', 'Allow', 'Bite', 'Biscuit', 'Break', 'Boss', 'Bubbles', 'Brought', 'Bridge', 'Back up', 'Bring up', 'Blocks', 'Believe', 'Come', 'Crowds', 'Carry out', 'Come across', 'Come up', 'Compasion', 'Doom', 'Dizzy', 'Duty', 'Drop', 'Tire', 'Toward', 'Travel', 'Tip', 'Wall', 'Knocked', 'Kinds of', 'Look alfter', 'Lawyer', 'Leave', 'Upted', 'Lost', 'Lower', 'Make Up', 'Must', 'Moods', 'Mind', 'Napkin'];
+                let significadosSpain = ['Publicidad', 'Scanear', 'Descubrir', 'Escojer', 'Debajo', 'Sin que', 'Util', 'De lo contrario', 'Sin embargo', 'Chatarra', 'Basura', 'Desperdicio', 'Molestar', 'Hoy en dia', 'Estar de Acuerdo', 'Aburrido', 'Volverse', 'Discutir', 'Parecer', 'Creer', 'Comenzar', 'Asegurar', 'Cortes', 'Desconocido', 'Hermano', 'Piedra', 'Zanahoria', 'Algodon', 'Enojado', 'Gorra', 'Salvaje', 'Pereza', 'Camino', 'Fantasma', 'Mal entendido', 'Palabra', 'Mundo', 'Gusano', 'Trabajo', 'Espada', 'Ganzo', 'Sobrina', 'Pulmon', 'Higado', 'Largo', 'Enlace', 'Tinta', 'Cuchilla', 'Agudo', 'Aberracion', 'Aversion', 'Hipocresia', 'Conjetura', 'Imposibilitar', 'Usurpar', 'Clamor', 'Espaldaraso', 'Ejemplar', 'Iconoclasta', 'Menospreciar', 'Rectificar', 'Frivolo', 'caustico', 'Insurgente', 'Hereje', 'Caprichoso', 'Decadencia', 'Copioso', 'Diatriba', 'Afinidad', 'Valentia', 'Estetico', 'Arcaico', 'Piso', 'Rapido', 'Lejos', 'Vidrio', 'Hermoso', 'Gafas', 'Dañinos', 'Abierto', 'Lado', 'Mar', 'Cantar', 'Fumar', 'Desnatar', 'Cuestiones', 'Carta', 'Señal', 'Cerrar con llave', 'Señor', 'Direccion', 'Paises', 'Conducir', 'Evitar', 'Grifos', 'Invitado', 'Supongo', 'Taborete', 'Herramienta', 'Vistazo', 'Ballena', 'Mientras', 'Todo', 'Propietario', 'Asuntos', 'Problemas', 'Concejo', 'Disponible', 'Ambos', 'Stand', 'Meta', 'Casas de Campo', 'Viento', 'Peluca', 'Corriente', 'Oido', 'Medio Ambiente', 'Averiguar', 'Libre', 'Seguir', 'Olvidado', 'Campos', 'Llevarse bien', 'Responder mas tarde', 'Dejar un habito', 'Contento', 'Bajarse', 'Paz', 'Darse prisa', 'Deberia estar hecho', 'Si mismo', 'Extendido', 'Adecuado', 'Lindo', 'Encima', 'Todavia', 'Podria', 'Odio', 'Estofado', 'Trabajadora', 'Tratar', 'Rasguño', 'Frotado', 'Grueso', 'Cuchara', 'Vecinos', 'Aunque', 'Compensar', 'Reforzar', 'Con avidez', 'Gastado', 'Buceo', 'Aspero', 'Soltar', 'Heridos', 'En silencio', 'Disculpa', 'Nunca mas', 'Vivo', 'Permitir', 'Mordedura', 'Galletas', 'Romper', 'Jefe', 'Burbujas', 'Trajo', 'Puente', 'Apoyar', 'Mencionar algo', 'Bloques', 'Creer', 'Venir', 'Multitudes', 'Llevar a cabo', 'Encontrarse alguien', 'Proponer', 'Compasion', 'Condenar', 'Mareado', 'Obligacion', 'Dejar a alguien', 'Neumatico', 'Hacia', 'Viaje', 'Propina', 'Pared', 'Golpe', 'Tipos', 'Cuidar', 'Abogado', 'Salir', 'Levantado', 'Perdido', 'Inferior', 'Recuperar', 'Debe', 'Estados de Animo', 'Mente', 'Servilleta'];
 
-                if (palabra == significadosSpain[0] || palabra == significadosSpain[1] || palabra == significadosSpain[2]) {
-                    document.getElementById('resultado').value = significadosIngles[0];
-                } else {
-                    if (palabra == significadosSpain[3] || palabra == significadosSpain[4] || palabra == significadosSpain[5] || palabra == significadosSpain[6] || palabra == significadosSpain[7] || palabra == significadosSpain[8]) {
 
-                        document.getElementById('resultado').value = significadosIngles[1];
+                for (var i = 0; i <= significadosSpain.length; i++) {
+
+                    if (String(palabra.toLowerCase()) === String(significadosSpain[i].toLowerCase())) {
+                        return document.getElementById('resultado').value = significadosIngles[i];
                     } else {
-                        if (palabra == significadosSpain[9] || palabra == significadosSpain[10] || palabra == significadosSpain[11]) {
-
-                            document.getElementById('resultado').value = significadosIngles[2];
-                        } else {
-
-
-                            if ($('#palabra').val().length == 0) {
-                                alert('Ingrese rut');
-                                return false;
-                            } else {
-                                document.getElementById('resultado').value = 'Lo siento, no se encuentra la palabra</p><br>';
-                            }
-                        }
+                        document.getElementById('resultado').value = 'Sin resultados...';
                     }
                 }
             }
-
 
             break;
         case op != 0:
             document.getElementById('cambio').innerHTML = '<p id="aviso">Inglés   >   Español</p>';
-
             traducir = function() {
                 let palabra = document.getElementById('palabra').value;
+                let significadosIngles = ['Advertising', 'Skim', 'Found Out', 'Choose', 'Below', 'Whitout', 'Useful', 'Otherwise', 'However', 'Junk', 'Trash', 'Waste', 'Bother', 'Nowadays', 'Agree', 'Bored', 'Become', 'Argue', 'Seens', 'Believe', 'Begin', 'Make Sure', 'Polite', 'Unknown', 'Brother', 'Stone', 'Carrot', 'Cotton', 'Angry', 'Cap', 'Wild', 'Lazy', 'Way', 'Ghost', 'Missunderstand', 'Word', 'World', 'Worm', 'Work', 'Sword', 'Goose', 'Niece', 'Lung', 'Liver', 'Long', 'Link', 'Ink', 'Blade', 'Sharp', 'Aberration', 'Aversion', 'Hypocrisy', 'Surmise', 'Preclude', 'Usurp', 'Clamor', 'Accolade', 'Exemplary', 'Iconoclast', 'Disparage', 'Rectify', 'Frivolous', 'Caustic', 'Insurgent', 'Heretic', 'Whimsical', 'Descadence', 'Copious', 'Tirade', 'Affinity', 'Bravity', 'Aesthetic', 'Archaic', 'Floor', 'Fast', 'Fairly', 'Glass', 'Gorgeous', 'Glasses', 'Harmful', 'Open', 'Side', 'Sea', 'Song', 'Smoking', 'Skim', 'Issues', 'Letter', 'Signal', 'Lock', 'Lord', 'Address', 'Countries', 'Drive', 'Avoid', 'Faucets', 'Guest', 'Guess', 'Stool', 'Tool', 'Peek', 'Whale', 'While', 'Whole, Everythink, Although', 'Owner', 'Affairs', 'Issues', 'Advice', 'Available', 'Both', 'Booth', 'Goal', 'Lodges', 'Wind', 'Wig', 'Stream', 'Heard', 'Environment', 'Find out', 'Free', 'Follow', 'Forgotten', 'Fields', 'Get Along', 'Get back to', 'Give up', 'Glad', 'Get off', 'Hope', 'Hurry up', 'It should be done', 'It self', 'Spread Out', 'Suitable', 'Cute', 'Above', 'Yet', 'Might', 'Hate', 'Stew', 'Hardworking', 'Treat', 'Scratch', 'Rubbed', 'Thick', 'Spoon', 'Neightboors', 'Even Though', 'Make Up', 'Reinforce', 'Greedily', 'Shabbily', 'Dive', 'Rough', 'Drop', 'Injured', 'Quietly', 'Aplaze', 'Anymore', 'Alive', 'Allow', 'Bite', 'Biscuit', 'Break', 'Boss', 'Bubbles', 'Brought', 'Bridge', 'Back up', 'Bring up', 'Blocks', 'Believe', 'Come', 'Crowds', 'Carry out', 'Come across', 'Come up', 'Compasion', 'Doom', 'Dizzy', 'Duty', 'Drop', 'Tire', 'Toward', 'Travel', 'Tip', 'Wall', 'Knocked', 'Kinds of', 'Look alfter', 'Lawyer', 'Leave', 'Upted', 'Lost', 'Lower', 'Make Up', 'Must', 'Moods', 'Mind', 'Napkin'];
+                let significadosSpain = ['Publicidad', 'Scanear', 'Descubrir', 'Escojer', 'Debajo', 'Sin que', 'Util', 'De lo contrario', 'Sin embargo', 'Chatarra', 'Basura', 'Desperdicio', 'Molestar', 'Hoy en dia', 'Estar de Acuerdo', 'Aburrido', 'Volverse', 'Discutir', 'Parecer', 'Creer', 'Comenzar', 'Asegurar', 'Cortes', 'Desconocido', 'Hermano', 'Piedra', 'Zanahoria', 'Algodon', 'Enojado', 'Gorra', 'Salvaje', 'Pereza', 'Camino', 'Fantasma', 'Mal entendido', 'Palabra', 'Mundo', 'Gusano', 'Trabajo', 'Espada', 'Ganzo', 'Sobrina', 'Pulmon', 'Higado', 'Largo', 'Enlace', 'Tinta', 'Cuchilla', 'Agudo', 'Aberracion', 'Aversion', 'Hipocresia', 'Conjetura', 'Imposibilitar', 'Usurpar', 'Clamor', 'Espaldaraso', 'Ejemplar', 'Iconoclasta', 'Menospreciar', 'Rectificar', 'Frivolo', 'caustico', 'Insurgente', 'Hereje', 'Caprichoso', 'Decadencia', 'Copioso', 'Diatriba', 'Afinidad', 'Valentia', 'Estetico', 'Arcaico', 'Piso', 'Rapido', 'Lejos', 'Vidrio', 'Hermoso', 'Gafas', 'Dañinos', 'Abierto', 'Lado', 'Mar', 'Cantar', 'Fumar', 'Desnatar', 'Cuestiones', 'Carta', 'Señal', 'Cerrar con llave', 'Señor', 'Direccion', 'Paises', 'Conducir', 'Evitar', 'Grifos', 'Invitado', 'Supongo', 'Taborete', 'Herramienta', 'Vistazo', 'Ballena', 'Mientras', 'Todo', 'Propietario', 'Asuntos', 'Problemas', 'Concejo', 'Disponible', 'Ambos', 'Stand', 'Meta', 'Casas de Campo', 'Viento', 'Peluca', 'Corriente', 'Oido', 'Medio Ambiente', 'Averiguar', 'Libre', 'Seguir', 'Olvidado', 'Campos', 'Llevarse bien', 'Responder mas tarde', 'Dejar un habito', 'Contento', 'Bajarse', 'Paz', 'Darse prisa', 'Deberia estar hecho', 'Si mismo', 'Extendido', 'Adecuado', 'Lindo', 'Encima', 'Todavia', 'Podria', 'Odio', 'Estofado', 'Trabajadora', 'Tratar', 'Rasguño', 'Frotado', 'Grueso', 'Cuchara', 'Vecinos', 'Aunque', 'Compensar', 'Reforzar', 'Con avidez', 'Gastado', 'Buceo', 'Aspero', 'Soltar', 'Heridos', 'En silencio', 'Disculpa', 'Nunca mas', 'Vivo', 'Permitir', 'Mordedura', 'Galletas', 'Romper', 'Jefe', 'Burbujas', 'Trajo', 'Puente', 'Apoyar', 'Mencionar algo', 'Bloques', 'Creer', 'Venir', 'Multitudes', 'Llevar a cabo', 'Encontrarse alguien', 'Proponer', 'Compasion', 'Condenar', 'Mareado', 'Obligacion', 'Dejar a alguien', 'Neumatico', 'Hacia', 'Viaje', 'Propina', 'Pared', 'Golpe', 'Tipos', 'Cuidar', 'Abogado', 'Salir', 'Levantado', 'Perdido', 'Inferior', 'Recuperar', 'Debe', 'Estados de Animo', 'Mente', 'Servilleta'];
 
-                let significadosSP = ['Manzana', 'Ratón', 'Carro'];
-                let significadosIN = ['Apple', 'APPLE', 'apple', 'mouse', 'MOUSE', 'Mouse', 'car', 'CAR', 'Car'];
-                alert = "Español";
-                if (palabra == significadosIN[0] || palabra == significadosIN[1] || palabra == significadosIN[2]) {
 
-                    document.getElementById('resultado').value = significadosSP[0];
-                } else {
-                    if (palabra == significadosIN[3] || palabra == significadosIN[4] || palabra == significadosIN[5]) {
+                for (var i = 0; i <= significadosIngles.length; i++) {
 
-                        document.getElementById('resultado').value = significadosSP[1];
+                    if (String(palabra.toLowerCase()) === String(significadosIngles[i].toLowerCase())) {
+                        return document.getElementById('resultado').value = significadosSpain[i];
                     } else {
-                        if (palabra == significadosIN[6] || palabra == significadosIN[7] || palabra == significadosIN[8]) {
-
-                            document.getElementById('resultado').value = significadosSP[2];
-                        } else {
-                            document.getElementById('resultado').value = 'Lo siento, no se encuentra la palabra';
-                        }
+                        document.getElementById('resultado').value = 'Sin resultados...';
                     }
                 }
-
-
             }
-
-
             break;
-
     }
-
 }
